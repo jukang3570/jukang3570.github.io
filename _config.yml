@@ -22,7 +22,7 @@ title: 주경's blog
 email: asekf122@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Developed diary by jukyeong
-# baseurl: "/" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://github.com/jukang3570/jukang3570.github.io.git" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: jukang3570
 highlighter: rouge
