@@ -1,5 +1,6 @@
 title: Your awesome title
 author: GitHub User
+url : https://github.com/jukang3570/jukang3570.github.io.git
 email: asekf122@gmail.com
 description: > # this means to ignore newlines until "show_exerpts:"
   Write an awesome description for your new site here. You can edit this
@@ -10,7 +11,7 @@ show_excerpts: true # set to true to show excerpts on the homepage
 # Minima date format
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
 sass:
-  sass_dir: https://github.com/jukang3570/jukang3570.github.io.git
+  sass_dir: _sass
 plainwhite:
   name: Yu Ju_Kyeong
   tagline: Developer
@@ -26,12 +27,10 @@ plainwhite:
     - post
   # generate social links in footer
   social_links:
-    twitter: samarsault
-    github:  samarsault
-    linkedIn: in/samarsault
+    github:  jukang3570
+    instagram: yu_ju_kyeong
     #dribbble: jekyll
     #flickr:   jekyll
-    #instagram: jekyll
     #pinterest: jekyll
     #youtube: jekyll
     #facebook: jekyll
