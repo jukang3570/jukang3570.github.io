@@ -1,6 +1,5 @@
 title: Your awesome title
 author: GitHub User
-url : https://github.com/jukang3570/jukang3570.github.io.git
 email: asekf122@gmail.com
 description: > # this means to ignore newlines until "show_exerpts:"
   Write an awesome description for your new site here. You can edit this
@@ -11,7 +10,7 @@ show_excerpts: true # set to true to show excerpts on the homepage
 # Minima date format
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
 sass:
-  sass_dir: _sass
+  sass_dir: https://github.com/jukang3570/jukang3570.github.io.git
 plainwhite:
   name: Yu Ju_Kyeong
   tagline: Developer
