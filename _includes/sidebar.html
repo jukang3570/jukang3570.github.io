@@ -1,6 +1,6 @@
 <div class="sidebar-item sidebar-header">
 	<div class='sidebar-brand'>
-		<a href="/about/">{{ site.title }}</a>
+		<a href="/">{{ site.title }}</a>
 	</div>
 	<p class="lead">{{ site.description }}</p>
 	{%- if social.github -%}
@@ -15,38 +15,16 @@
 	<ul class="nav">
       <li class="nav-title">Pages</li>
 	  <li>
-	  	<a class="nav-item" href="/">Articles</a>
+	  	<a class="nav-item" href="/">Study</a><br>
+		<a class="nav-item" href="{{blog}}">Blog</a>
 	  </li>
-	  {% assign pages_list = site.pages %}
-	  {% for node in pages_list %}
-	    {% if node.title != null %}
-	      {% if node.layout == "page" %}
-	        <li>
-	        	<a class="nav-item" href="{{ node.url }}">
-	            	{{ node.title }}
-	            </a>
-	        </li>
-	      {% endif %}
-	    {% endif %}
-	  {% endfor %}
-	</ul>
-</div>
-
-<div class="sidebar-item sidebar-nav">
-  	<ul class="nav">
-			<li class="nav-title">Categories</li>
-	    {% for category in site.categories %}
-	    <li>
-	    	<a class="nav-item" href="{{ root_url }}/{{ site.category_dir }}#{{ category | first }}">
-				<span class="name">{{ category | first }}</span>
-				<span class="badge">{{ category | last | size }}</span>
-	    	</a>
- 		</li>
-	    {% endfor %}
-	  </nav>
+	  
 	</ul>
 </div>
 
 <div class="sidebar-item sidebar-footer">
-	<p>Powered by <a href="https://github.com/jekyll/jekyll">Jekyll</a></p>
+	<p>Instargram <a href="https://www.instagram.com/yu_ju_kyeong/"> : yu_ju_kyeong</a> <br>
+	Git : <a href="https://github.com/jukang3570"> jukang3570</a> <br>
+	Contact : asekf122@gmail.com
+	</p>
 </div>
