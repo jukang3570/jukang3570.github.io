@@ -1,10 +1,10 @@
 title: jukang develop blog
 description: this blog is develop study place
-baseurl: "/blog" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://jukang3570.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Author
-author-name:    GangGangGang
+author-name:    GangGangGanggang
 author-image:   1.jpg
 author-job:     Developer
 author-email:   asekf122@gmail.com # Add your email for contant form.
