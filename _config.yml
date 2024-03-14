@@ -1,27 +1,18 @@
-title: Welcome to Flexton
-description: Flexton is a responsive and ultra-minimal theme for Jekyll.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "flexton.netlify.com" # the base hostname & protocol for your site, e.g. http://example.com
+title: jukang develop blog
+description: this blog is develop study place
+baseurl: "/blog" # the subpath of your site, e.g. /blog
+url: "https://jukang3570.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Author
-author-name:    Jukyoung YU
+author-name:    GangGangGang
 author-image:   1.jpg
 author-job:     Developer
 author-email:   asekf122@gmail.com # Add your email for contant form.
 about-author:   아직은 이것저것 공부하고 있는 평범한 컴공 대학생입니다. 잘 부탁드립니다! ^^
 
 # Social settings
-social-github:   juakng3570
+social-github: juakng3570
 social-instagram: jugang_gang
-
-# Newsletter
-mailchimp: # Add your MailChimp form identifier. For example - blogenjoyfreedom.us16.list-manage.com/subscribe/post?u=cd56155d76ddeeb4c0bc4d080&amp;id=7a526cd13e
-
-# Google Analytics
-google-analytics: # Add your identifier. For example UA-99631805-1
-
-# Comment Section (Disqus)
-disqus-identifier: mr-brown # Add your shortname for Disqus Comment. For example mr-brown
 
 # Build settings
 markdown: kramdown
