@@ -5,9 +5,9 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-  <title>백준 알고리즘 6550번</title>
-  <meta name='description' content="6550번 부분문자열 문제  [링크] : https://www.acmicpc.net/problem/6550">
-  <link rel='canonical' href="http://localhost:4000/2024/01/31/algorithm6550/">
+  <title>백준 알고리즘 11718번</title>
+  <meta name='description' content="11718번 그대로 출력하기  [링크] : https://www.acmicpc.net/problem/11718">
+  <link rel='canonical' href="http://localhost:4000/2024/04/05/algorithm11718/">
   <link rel='alternate' type='application/rss+xml' title='jukang develop blog' href="http://localhost:4000/feed.xml">
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Volkhov:400,700" rel="stylesheet">
@@ -92,67 +92,45 @@
     
     <div class="c-wrap-content">
       <header class="c-article__header">
-        <h1 class="c-article__title">백준 알고리즘 6550번</h1>
+        <h1 class="c-article__title">백준 알고리즘 11718번</h1>
         <div class="c-article__date">
-          <span>2024, Jan 31</span>
+          <span>2024, Apr 05</span>
         </div>
       </header>
-      <h1 id="6550번-부분문자열-문제">6550번 부분문자열 문제</h1>
+      <h1 id="11718번-그대로-출력하기">11718번 그대로 출력하기</h1>
 <blockquote>
-  <p>[링크] : https://www.acmicpc.net/problem/6550</p>
+  <p>[링크] : https://www.acmicpc.net/problem/11718</p>
 </blockquote>
 
 <h1 id="주의해야할-점">주의해야할 점</h1>
 <ol>
-  <li>예제처럼 무한 반복문이라는 것</li>
-  <li>Yes, No 처럼 모두가 대문자는 아니다.</li>
-  <li>전체 문자열 t의 몇개의 문자를 제거하고 합쳤을 경우 s가 되어야 한다.</li>
+  <li>쉬워 보이는 문제이지만 EOF(End of file)을 염두하고 풀어야 한다.
+백준 문제에선 최대 몇개의 입력이 들어오는지 모르는 문제에서 사용된다.</li>
+  <li>C++의 입력 cin, getline의 차이를 알고 작성해야 한다.</li>
+  <li>getline()은 미입력시 ““가 입력된다.
+이점을 활용하여 EOF 를 지정해주면 된다.</li>
 </ol>
 
-<h1 id="힘들었던-점">힘들었던 점</h1>
+<h1 id="cin-과-getline-의-차이점">cin 과 getline 의 차이점</h1>
 <ul>
-  <li>오랜만에 첫 알고리즘 문제라 가물가물하며 풀었는데 생각보다 단순하게 접근하면 풀기 쉬웠던 문제이다.</li>
-  <li>다만, j(문자열 s의 주소)를 0부터 접근해서 일치시의 조건문을 이렇게 접근하였다.
-    <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">if</span><span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</code></pre></div>    </div>
-    <p>하지만 입력값이 AA Abc 인경우 A값이 두개이지만 1값으로 만족하기 때문에 -1값은 옳지 않는다.</p>
-  </li>
+  <li>cin은 문자와 문자열 모두 입력받을 수 있다.</li>
+  <li>get()은 문자만 입력받을 수 있다.</li>
+  <li>getline은 문자열만 입력받는다. getline(cin, 변수명)으로 사용된다.</li>
 </ul>
 
 <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span>
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">string</span> <span class="n">s</span><span class="p">;</span> <span class="c1">//문자열 s 선언</span>
-    <span class="n">string</span> <span class="n">t</span><span class="p">;</span> <span class="c1">//문자열 t 선언</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">s</span> <span class="o">&gt;&gt;</span> <span class="n">t</span><span class="p">)</span> <span class="c1">//문제에선 문자열을 계속 입력받기 때문에 무한반복으로 s와 t를 입력받는다.</span>
-    <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">check</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//부분문자열이 맞는지 확인 0이면 false 1 이면 true</span>
-        <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//부분 문자열 s 위치를 저장하기 위한 변수</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">string</span> <span class="n">s</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">getline</span><span class="p">(</span><span class="n">cin</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">s</span> <span class="o">==</span> <span class="s">""</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
 
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">t</span><span class="p">.</span><span class="n">length</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="c1">//문자열 s는 t의 일부이기 때문에 t의 전체를 문자열 비교한다.</span>
-        <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c1">//문자열 위치가 같은경우 j++ 을 하여 다음 문자 검사</span>
-            <span class="p">{</span>
-                <span class="n">j</span><span class="o">++</span><span class="p">;</span>
-            <span class="p">}</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">())</span> <span class="c1">//j의 값 즉 부분무자열 s의 위치가 모두 도달한경우 check 값을 true로 변환</span>
-            <span class="p">{</span>
-                <span class="n">check</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-
-        <span class="k">if</span> <span class="p">(</span><span class="n">check</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Yes"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">//부분문자열일경우 Yes 출력</span>
-        <span class="p">}</span>
-        <span class="k">else</span>
-        <span class="p">{</span>
-            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"No"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">//부분무자열이 아닌경우 No 출력</span>
-        <span class="p">}</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
     <span class="p">}</span>
+    
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -168,10 +146,10 @@
           
         </div>
         <div class="c-article__share">
-          <a href="https://twitter.com/intent/tweet?text=%EB%B0%B1%EC%A4%80%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%206550%EB%B2%88&url=http://localhost:4000/2024/01/31/algorithm6550/" title="Share
+          <a href="https://twitter.com/intent/tweet?text=%EB%B0%B1%EC%A4%80%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%2011718%EB%B2%88&url=http://localhost:4000/2024/04/05/algorithm11718/" title="Share
           on Twitter" rel="nofollow" target="_blank"><div data-icon='ei-sc-twitter' data-size='s'></div></a>
-          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/2024/01/31/algorithm6550/" title="Share on Facebook" rel="nofollow" target="_blank"><div data-icon='ei-sc-facebook' data-size='s'></div></a>
-          <a href="https://plus.google.com/share?url=http://localhost:4000/2024/01/31/algorithm6550/" title="Share on Google+" rel="nofollow" target="_blank"><div data-icon='ei-sc-google-plus' data-size='s'></div></a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/2024/04/05/algorithm11718/" title="Share on Facebook" rel="nofollow" target="_blank"><div data-icon='ei-sc-facebook' data-size='s'></div></a>
+          <a href="https://plus.google.com/share?url=http://localhost:4000/2024/04/05/algorithm11718/" title="Share on Google+" rel="nofollow" target="_blank"><div data-icon='ei-sc-google-plus' data-size='s'></div></a>
         </div>
       </div>
       <div class="c-newsletter">
