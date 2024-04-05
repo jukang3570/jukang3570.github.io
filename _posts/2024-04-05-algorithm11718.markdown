@@ -1,0 +1,42 @@
+---
+layout: post
+title: 백준 알고리즘 11718번
+image: 
+date: 2024-04-05 17:00:00 +0900
+tags: [study, algorithm, baekjoon]
+category: BAEKJOON
+---
+# 11718번 그대로 출력하기
+> [링크] : https://www.acmicpc.net/problem/11718
+
+# 주의해야할 점
+1. 쉬워 보이는 문제이지만 EOF(End of file)을 염두하고 풀어야 한다.
+백준 문제에선 최대 몇개의 입력이 들어오는지 모르는 문제에서 사용된다.
+2. C++의 입력 cin, getline의 차이를 알고 작성해야 한다.
+3. getline()은 미입력시 ""가 입력된다.
+이점을 활용하여 EOF 를 지정해주면 된다.
+
+# cin 과 getline 의 차이점
+ - cin은 문자와 문자열 모두 입력받을 수 있다.
+ - get()은 문자만 입력받을 수 있다.
+ - getline은 문자열만 입력받는다. getline(cin, 변수명)으로 사용된다.
+
+
+
+```c++
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    string s;
+    while(true) {
+        getline(cin, s);
+        if(s == "") break;
+
+        cout << s << endl;
+    }
+    
+    return 0;
+}
+```
